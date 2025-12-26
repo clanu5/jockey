@@ -1,30 +1,25 @@
 #!/bin/bash
 
-echo "🍀 YASUO WOLF BOT - Otomatik Kurulum Başlıyor..."
-sleep 2
+# Renk tanımları
+YEIL='\033[0;32m'
+NC='\033[0m'
 
-# 1. Sistem Güncelleme
-echo "🔄 Sistem paketleri güncelleniyor..."
+echo -e "${YEIL}🚀 Kurulum Başlıyor...${NC}"
+
+# Sistem Güncelleme
 pkg update -y && pkg upgrade -y
 
-# 2. Gerekli Paketlerin Kurulumu (Node.js ve Wget)
-echo "📦 Node.js ve Wget kuruluyor..."
+# Gerekli Paketler
 pkg install nodejs wget -y
 
-# 3. Klasör Hazırlığı
-echo "📂 Proje klasörü oluşturuluyor..."
-mkdir -p yasuo_bot
-cd yasuo_bot
-
-# 4. Kütüphanelerin Kurulumu
-echo "📚 Socket.io-client kütüphanesi yükleniyor..."
+# Klasör ve Kütüphane Kurulumu
+mkdir -p wolf_bot
+cd wolf_bot
 npm install socket.io-client
 
-# 5. Bot Dosyasını GitHub'dan Çekme
-# NOT: Buradaki URL'yi kendi GitHub Raw linkinle değiştir!
-echo "📥 Bot dosyası indiriliyor..."
-wget -O bot.mjs https://raw.githubusercontent.com/clanu5/jockey/refs/heads/main/bot.mjs
+# İki Dosyayı Aynı Anda İndirme (Linkleri Kendi Linklerinle Değiştir)
+echo -e "${YEIL}📥 Dosyalar indiriliyor...${NC}"
+wget -q https://raw.githubusercontent.com/clanu5/jockey/refs/heads/main/bot.mjs
+wget -q https://raw.githubusercontent.com/KULLANICI/REPO/main/diger_dosya.js
 
-echo "✅ KURULUM TAMAMLANDI!"
-
-echo "🚀 Botu başlatmak için: cd yasuo_bot && node bot.js"
+echo -e "${YEIL}✅ İşlem Tamam! Çalıştırmak için: node bot.js${NC}"
