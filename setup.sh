@@ -23,7 +23,8 @@ npm install socket.io-client
 # 5. Bot Dosyasını GitHub'dan Çekme
 # NOT: Buradaki URL'yi kendi GitHub Raw linkinle değiştir!
 echo "📥 Bot dosyası indiriliyor..."
-wget -O bot.js https://raw.githubusercontent.com/KULLANICI_ADIN/REPO_ADIN/main/bot.js
+wget -O bot.mjs https://raw.githubusercontent.com/clanu5/jockey/refs/heads/main/bot.mjs
 
 echo "✅ KURULUM TAMAMLANDI!"
+
 echo "🚀 Botu başlatmak için: cd yasuo_bot && node bot.js"
